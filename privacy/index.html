@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — NotchDeck</title>
+<style>
+  :root{
+    --bg:#f7f7f9; --card:#ffffff; --text:#1c1e21; --muted:#5b6069;
+    --accent:#3757ff; --border:#e6e7eb; --code-bg:#f0f1f5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#14151a; --card:#1c1e24; --text:#eceef2; --muted:#9aa0ab; --accent:#7c94ff; --border:#2a2c34; --code-bg:#22242c; }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:48px 20px 96px;}
+  .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:40px;}
+  h1{font-size:1.7rem; margin:0 0 4px;}
+  .meta{color:var(--muted); font-size:0.92rem; margin-bottom:32px;}
+  h2{font-size:1.15rem; margin-top:36px; margin-bottom:10px; border-top:1px solid var(--border); padding-top:24px;}
+  h1 + .meta + p, .card > p:first-of-type{margin-top:0;}
+  p{margin:0 0 14px;}
+  ul{margin:0 0 14px; padding-left:22px;}
+  li{margin-bottom:6px;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  table{width:100%; border-collapse:collapse; margin:14px 0 20px; font-size:0.94rem;}
+  th,td{border:1px solid var(--border); padding:10px 12px; text-align:left; vertical-align:top;}
+  th{background:var(--code-bg); font-weight:600;}
+  code{background:var(--code-bg); padding:1px 6px; border-radius:5px; font-size:0.9em;}
+  .contact{background:var(--code-bg); border-radius:10px; padding:16px 18px; margin-top:6px;}
+  footer{text-align:center; color:var(--muted); font-size:0.85rem; margin-top:28px;}
+  .badge{display:inline-block; background:var(--code-bg); color:var(--muted); border-radius:999px; padding:3px 10px; font-size:0.78rem; margin-left:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>Privacy Policy</h1>
+    <div class="meta">NotchDeck · Effective date: September 16, 2026</div>
+
+    <p>Thanh Mich LTD ("we," "us," or "our") publishes NotchDeck (the "App"), an Android utility that turns your phone's front camera cutout ("notch") into a programmable gesture button. This Privacy Policy explains what data the App collects, why, and how it is used.</p>
+    <p>NotchDeck does not require you to create an account or sign in. There is no in-app purchase in this version of the App.</p>
+
+    <h2>1. Information We Collect</h2>
+    <h3 style="margin:18px 0 8px;font-size:1rem;">1.1 Information processed on your device only (never sent to our servers)</h3>
+    <p>NotchDeck stores your preferences and configuration directly on your device using local app storage. This includes:</p>
+    <ul>
+      <li>Your gesture-to-action mapping, menu and widget layout, notch calibration, and override rules</li>
+      <li>Notes you write in the Quick Notes feature</li>
+      <li>The phone number you select for the "Quick Call" gesture action (see §1.2)</li>
+      <li>Your own AI provider API key, if you choose to enter one (see §3)</li>
+      <li>App preferences such as theme, text size, and haptic settings</li>
+    </ul>
+    <p>We do not operate a server that stores this data, and we cannot see it. Uninstalling the App or clearing its storage permanently deletes it from your device.</p>
+
+    <h3 style="margin:18px 0 8px;font-size:1rem;">1.2 Permissions and what each one is used for</h3>
+    <p>NotchDeck requests the following Android permissions. We only use each permission for the purpose described — none of them let the App read the content of other apps' screens.</p>
+    <table>
+      <tr><th>Permission</th><th>What it's for</th></tr>
+      <tr><td>Accessibility Service</td><td>The core of the App. It detects touches and gestures over your phone's camera cutout and performs the action you assigned (e.g., go Back, go Home, open Recents, take a screenshot, lock the screen). To support "Smart Override" rules (run a different action while a specific app is open) and the "Open last-used app" action, the service also reads the <strong>package name</strong> of the app currently in the foreground. This package name is used only in memory on your device — it is never written to a file, never uploaded, never shared. The Accessibility Service <strong>cannot read on-screen text or content from other apps</strong>; window-content reading is explicitly disabled in the App's configuration.</td></tr>
+      <tr><td>Notification access</td><td>Used only so the App can detect the phone's active media session (song/artist and playback controls) to power the Media widget. The App does not read the content of your other notifications, and does not store or transmit any notification data.</td></tr>
+      <tr><td>Camera</td><td>Used for two features: (1) the front-camera "Mirror" tool, which shows a live preview only — nothing is recorded, captured, or saved; and (2) the QR/barcode scanner, which decodes codes entirely on your device using Google's ML Kit bundled model. No camera image or video ever leaves your device.</td></tr>
+      <tr><td>Contacts</td><td>Used only when you tap "choose a contact" for the Quick Call gesture action. We read the name and number of the single contact you pick; that number is saved to your local gesture configuration on-device. We do not read or upload your full contact list.</td></tr>
+      <tr><td>Phone state</td><td>Used to detect whether a call is active, so Smart Override rules that depend on "call in progress" work correctly.</td></tr>
+      <tr><td>Call phone</td><td>Used to place a call when you trigger the Quick Call gesture action you configured.</td></tr>
+      <tr><td>Notification policy access (Do Not Disturb)</td><td>Used only if you assign the "Silent / Do Not Disturb" action to a gesture, so the App can toggle that system mode.</td></tr>
+      <tr><td>Display over other apps ("System Alert Window")</td><td>Only requested if you turn on "Work on lock screen" in Settings. Without this setting, the gesture overlay uses a lock-screen-safe overlay type that does not need this permission at all.</td></tr>
+      <tr><td>Modify system settings</td><td>Used for the brightness-adjustment gesture action.</td></tr>
+      <tr><td>Post notifications / exact alarms / foreground service</td><td>Used to show and keep alive the countdown notification while a Timer or Stopwatch you started is running.</td></tr>
+      <tr><td>Query all installed apps</td><td>Used to populate the app picker list for the "Open app" gesture action, so you can choose which app to launch.</td></tr>
+      <tr><td>Vibrate</td><td>Used for haptic feedback when you perform a gesture.</td></tr>
+    </table>
+    <p>We do <strong>not</strong> request storage/file-access permissions, and the App explicitly excludes "All files access" — NotchDeck is not a file manager.</p>
+
+    <h3 style="margin:18px 0 8px;font-size:1rem;">1.3 Information collected by advertising, analytics, and attribution services</h3>
+    <p>NotchDeck is built using our standard technology stack, which includes the Google Mobile Ads (AdMob) SDK together with mediation partners (AppLovin, Meta Audience Network), the Adjust and TikTok attribution SDKs, and Google Firebase (Analytics, Crashlytics, Remote Config). These SDKs and the permissions they need (such as the Google Advertising ID) are present in the App.</p>
+    <p><strong>In this release, in-app advertising is not turned on</strong> — you will not see ads. We are disclosing these SDKs because their code and permissions ship in the installed app and may be activated in a future update; we believe in describing what the App is actually capable of, not only what is switched on today.</p>
+    <p>When active, these services can collect and share:</p>
+    <ul>
+      <li><strong>Advertising ID</strong> and other device identifiers — used for ad delivery, ad measurement, and attributing app installs to a marketing campaign</li>
+      <li><strong>App activity</strong> (screens viewed, buttons used) and <strong>crash/diagnostic logs</strong> — sent to Firebase Analytics and Firebase Crashlytics to help us understand app stability and usage</li>
+      <li><strong>Basic device information</strong> (device model, OS version, network type) used by the SDKs above for their respective purposes</li>
+    </ul>
+    <p>Each of these providers processes data under its own privacy policy:</p>
+    <ul>
+      <li>Google (AdMob, Firebase, ML Kit): <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+      <li>AppLovin: <a href="https://www.applovin.com/privacy/">applovin.com/privacy</a></li>
+      <li>Meta (Facebook Audience Network): <a href="https://www.facebook.com/privacy/policy/">facebook.com/privacy/policy</a></li>
+      <li>Adjust: <a href="https://www.adjust.com/privacy-policy/">adjust.com/privacy-policy</a></li>
+      <li>TikTok Business: <a href="https://www.tiktok.com/legal/page/eea/privacy-policy/en">tiktok.com/legal/page/eea/privacy-policy/en</a></li>
+    </ul>
+    <p>You can reset or opt out of your Advertising ID at any time in your device's Settings (Settings → Privacy → Ads on most Android versions).</p>
+
+    <h3 style="margin:18px 0 8px;font-size:1rem;">1.4 AI Assistant (optional, off by default unless configured)</h3>
+    <p>NotchDeck includes an optional AI assistant. If you type a question or ask the assistant to rewrite/summarize a note, that text is sent to <strong>OpenRouter</strong> (openrouter.ai), a third-party AI API provider, in order to generate a response. This only happens when you actively use the assistant and an API key is configured — either your own key (if you choose to enter one in Settings) or a key we provide at the app level. If no key is available, the assistant shows a "not configured" state and sends nothing.</p>
+    <p>We do not store the content of your AI conversations on our own servers — the request goes directly from your device to OpenRouter. Review OpenRouter's privacy policy at <a href="https://openrouter.ai/privacy">openrouter.ai/privacy</a> for how they handle this data.</p>
+
+    <h2>2. How We Use Information</h2>
+    <p>We use the information described above to: operate and personalize the App's gesture and widget features; keep the App stable (crash reporting); understand feature usage in aggregate (analytics); and, when advertising is enabled, deliver and measure ads. We do not sell your personal information.</p>
+
+    <h2>3. Data Sharing</h2>
+    <p>We share data only with the service providers listed in §1.3 and §1.4, each acting for the specific purpose described (ad delivery, attribution, crash/analytics, or AI responses). We do not share your contacts, notes, camera preview, or on-device configuration with anyone.</p>
+
+    <h2>4. Data Retention and Deletion</h2>
+    <p>NotchDeck does not use accounts, so there is no server-side profile tied to you to delete. All app preferences, gesture configuration, and notes described in §1.1 live only on your device and are deleted immediately when you uninstall the App or clear its storage from Android Settings → Apps → NotchDeck → Storage → Clear storage.</p>
+    <p>Data processed by the third-party SDKs in §1.3 (advertising ID, analytics events, crash logs) is retained and deleted according to each provider's own policy; you can reset your Advertising ID at any time in your device settings to limit further linkage. If you would like help understanding or exercising any data rights, contact us using the details in §7.</p>
+    <p>See also our dedicated <a href="../delete-account/">Data Deletion</a> page.</p>
+
+    <h2>5. Children's Privacy</h2>
+    <p>NotchDeck is a general-purpose utility app not directed at children, and we do not knowingly collect personal information from children under 13 (or the relevant minimum age in your jurisdiction). If you believe a child has provided us with personal information, contact us and we will address it.</p>
+
+    <h2>6. Your Rights</h2>
+    <p>Depending on where you live, you may have rights to access, correct, or delete your personal data, or to object to certain processing (for example, under GDPR or CCPA/CPRA). Because most data described in this policy is either stored only on your device or processed by the third-party SDKs listed above, the most direct way to exercise these rights is: (a) delete on-device data per §4, (b) reset your Advertising ID in device settings, and/or (c) contact the relevant third-party provider directly using the links in §1.3–1.4. You can also contact us at the email in §7 and we will assist where we are able to.</p>
+
+    <h2>7. Contact Us</h2>
+    <div class="contact">
+      Thanh Mich LTD<br>
+      Email: <a href="mailto:thanhmichltd@gmail.com">thanhmichltd@gmail.com</a>
+    </div>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time, for example when we add a feature or change a third-party provider. We will update the "Effective date" above when we do. Continued use of the App after a change constitutes acceptance of the updated policy.</p>
+  </div>
+  <footer>NotchDeck · <a href="../terms/">Terms of Use</a> · <a href="../delete-account/">Data Deletion</a></footer>
+</div>
+</body>
+</html>
